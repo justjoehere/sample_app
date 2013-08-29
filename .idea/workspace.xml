@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="36b9fdcb-42d7-4d41-baf9-b8c716dbec02" name="Default" comment="" />
+    <list default="true" id="36b9fdcb-42d7-4d41-baf9-b8c716dbec02" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.rdoc" afterPath="$PROJECT_DIR$/README.rdoc" />
+    </list>
     <ignored path="sample_app.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="36b9fdcb-42d7-4d41-baf9-b8c716dbec02" time="1377804410253" ignored="false" />
+    <file path="/README.rdoc" changelist="36b9fdcb-42d7-4d41-baf9-b8c716dbec02" time="1377804520351" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,10 +27,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="17" selection-start="258" selection-end="258" vertical-scroll-proportion="0.28825623">
+            <state line="9" column="17" selection-start="258" selection-end="258" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.rdoc" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.rdoc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="46" selection-start="91" selection-end="91" vertical-scroll-proportion="0.03202847">
               <folding />
             </state>
           </provider>
@@ -49,6 +61,7 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/README.rdoc" />
       </list>
     </option>
   </component>
@@ -347,7 +360,14 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="17" selection-start="258" selection-end="258" vertical-scroll-proportion="0.28825623">
+        <state line="9" column="17" selection-start="258" selection-end="258" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.rdoc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="46" selection-start="91" selection-end="91" vertical-scroll-proportion="0.03202847">
           <folding />
         </state>
       </provider>
