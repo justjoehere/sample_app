@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36b9fdcb-42d7-4d41-baf9-b8c716dbec02" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/static_pages/contact.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/static_pages_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/static_pages_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/requests/static_pages_spec.rb" afterPath="$PROJECT_DIR$/spec/requests/static_pages_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sample_app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -14,7 +10,7 @@
     <file path="/README.rdoc" changelist="36b9fdcb-42d7-4d41-baf9-b8c716dbec02" time="1377804520351" ignored="false" />
     <file path="/application.rb" changelist="36b9fdcb-42d7-4d41-baf9-b8c716dbec02" time="1377806218001" ignored="false" />
     <file path="/Gemfile" changelist="36b9fdcb-42d7-4d41-baf9-b8c716dbec02" time="1378333082330" ignored="false" />
-    <file path="/static_pages_spec.rb" changelist="36b9fdcb-42d7-4d41-baf9-b8c716dbec02" time="1379445707355" ignored="false" />
+    <file path="/static_pages_spec.rb" changelist="36b9fdcb-42d7-4d41-baf9-b8c716dbec02" time="1379446562185" ignored="false" />
     <file path="/a.dummy" changelist="36b9fdcb-42d7-4d41-baf9-b8c716dbec02" time="1378330242969" ignored="false" />
     <file path="/home.html.erb" changelist="36b9fdcb-42d7-4d41-baf9-b8c716dbec02" time="1378926619888" ignored="false" />
     <file path="/secret_token.rb" changelist="36b9fdcb-42d7-4d41-baf9-b8c716dbec02" time="1378329507439" ignored="false" />
@@ -52,19 +48,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="static_pages_spec.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="static_pages_spec.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spec/requests/static_pages_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="7" selection-start="1742" selection-end="1742" vertical-scroll-proportion="0.0">
+            <state line="52" column="44" selection-start="1696" selection-end="1696" vertical-scroll-proportion="0.6904177">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="static_pages_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="static_pages_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/static_pages_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="13" selection-start="120" selection-end="120" vertical-scroll-proportion="0.34398034">
+            <state line="6" column="65" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -811,7 +807,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="ruby-line">
           <url>file://$PROJECT_DIR$/spec/requests/static_pages_spec.rb</url>
-          <line>13</line>
+          <line>14</line>
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="1" />
@@ -910,16 +906,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/requests/static_pages_spec.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/static_pages_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="7" selection-start="1742" selection-end="1742" vertical-scroll-proportion="0.0">
+        <state line="6" column="65" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/static_pages_controller.rb">
+    <entry file="file://$PROJECT_DIR$/spec/requests/static_pages_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="120" selection-end="120" vertical-scroll-proportion="0.34398034">
+        <state line="52" column="44" selection-start="1696" selection-end="1696" vertical-scroll-proportion="0.6904177">
           <folding />
         </state>
       </provider>
