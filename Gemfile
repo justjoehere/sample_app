@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 #ruby-gemset=railstutorial_rails_4_0
-
+require 'rbconfig' #for use with guard
 gem 'rails', '4.0.0'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'bcrypt-ruby', '3.0.1'
@@ -13,7 +13,8 @@ group :development, :test do
   gem 'sqlite3','1.3.8'    #v1.3.5 and 1.3.7 have an issue with R2.0.0 and 1.9.3
   gem 'rspec-rails'#, '2.13.1'
   # The following optional lines are part of the advanced setup.
-  # gem 'guard-rspec', '2.5.0'
+  gem 'guard-rspec', '2.5.0'
+  gem 'wdm', '>= 0.1.0' if RbConfig::CONFIG['target_os'] =~ /mswin|mingw/i      #for use with guard
   # gem 'spork-rails', github: 'sporkrb/spork-rails'
   # gem 'guard-spork', '1.5.0'
   # gem 'childprocess', '0.3.6'
