@@ -2,16 +2,20 @@
 
 <html>
 <head>
-
+  <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  #Is the same as ""application", {:media=>"all", "data-turbolinks-track" => true}"
+  <!--This is the same as ""application", {:media=>"all", "data-turbolinks-track" => true}"-->
+  <!--Can't use data-turbolinks-track as a symbol ':data-turbolinks-track' because of convention violation-->
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-  <title><%= full_title(yield(:title)) %></title>
+  <%= render 'layouts/shim' %>
 </head>
 <body>
-
-<%= yield %>
+<%= render 'layouts/header' %>
+    <div class="container">
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
 
 </body>
 </html>
