@@ -10,6 +10,8 @@ gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 
+gem 'annotate', '2.5.0', group: :development
+
 group :development, :test do
   gem 'sqlite3','1.3.8'    #v1.3.5 and 1.3.7 have an issue with R2.0.0 and 1.9.3
   gem 'rspec-rails'#, '2.13.1'
