@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 #ruby-gemset=railstutorial_rails_4_0
-#####Pick up at Excercise SPork!!!
 require 'rbconfig' #for use with guard
 gem 'rails', '4.0.0'
 gem 'bootstrap-sass', '2.3.2.0'
