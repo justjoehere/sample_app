@@ -11,4 +11,6 @@ class User < ActiveRecord::Base
   #where I've declared the name, email fields in the db creates issues when
   #you explicitly state them in this model class
 
+  has_secure_password
+  validates :password, length: { minimum: 6 }
 end

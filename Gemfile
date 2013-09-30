@@ -5,7 +5,8 @@ ruby '2.0.0'
 require 'rbconfig' #for use with guard
 gem 'rails', '4.0.0'
 gem 'bootstrap-sass', '2.3.2.0'
-gem 'bcrypt-ruby', '3.0.1'
+gem 'bcrypt-ruby', '3.1.2'
+#Had to do this http://stackoverflow.com/questions/18541062/issues-using-bcrypt-3-0-1-with-ruby2-0-on-windows
 gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
