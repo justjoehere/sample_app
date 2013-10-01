@@ -11,6 +11,16 @@ class UsersController < ApplicationController
   #Controller action for routes!
 
   def new
+    @user=User.create
+  end
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      flash[:success] = "Welcome to the Sample App!"
+      redirect_to @user
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -19,4 +29,11 @@ class UsersController < ApplicationController
     #the params[:id] receives the /1
     @user = User.find(params[:id])
   end
+
+  private
+    def user_params
+      #defines which parameters of the user model get passed.  Allows you to hide some
+      #attributes when needed. http://ruby.railstutorial.org/chapters/sign-up#code-create_action_strong_parameters
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
 end
