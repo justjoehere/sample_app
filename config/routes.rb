@@ -1,6 +1,8 @@
 SampleApp::Application.routes.draw do
   #get "users/new"
   resources :users
+  match '/signup',  to: 'users#new', via: 'get'
+
   #resources replaces the user/new line.
   #See http://ruby.railstutorial.org/chapters/sign-up#table-RESTful_users
   #The routes below are included via the resources line
@@ -16,13 +18,16 @@ SampleApp::Application.routes.draw do
   #DELETE		/users/1	destroy		user_path(user)		delete user
   #Controller action for routes!
 
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/signin',  to: 'sessions#new', as: 'signin', via: 'get'
+  match '/signout', to: 'sessions#destroy', as: 'signout', via: 'delete'
 
   root 'static_pages#home'
   match 'static_pages/help', to: 'static_pages#help', as: 'help', via: 'get'
   match 'static_pages/home', to: 'static_pages#home', as:'home', via: 'get'
   match 'static_pages/about', to: 'static_pages#about', as: 'about' ,via: 'get'
   match 'static_pages/contact', to: 'static_pages#contact', as: 'contact' ,via: 'get'
-  match '/signup', to: 'users#new', via: 'get'
+
 
   #Okay, I've figured out that
   #match means match the request 'static_pages/help' on a get request.
