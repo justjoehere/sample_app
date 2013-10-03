@@ -2,10 +2,11 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 #ruby-gemset=railstutorial_rails_4_0
 require 'rbconfig' #for use with guard
-gem 'rails', '4.0.0'
+gem 'rails', '~>4.0.0'
+#gem 'activemodel',github: 'rails/rails'
 gem 'bootstrap-sass', '2.3.2.0'
-gem 'bcrypt-ruby', :require => "bcrypt"
-#gem 'bcrypt-ruby', '3.1.2', :require => "bcrypt"
+#gem 'bcrypt-ruby', :require => "bcrypt"
+gem 'bcrypt-ruby', '3.1.2', :require => "bcrypt"
 #gem 'bcrypt-ruby', '3.0.1', :require => "bcrypt"
 #Had to do this http://stackoverflow.com/questions/18541062/issues-using-bcrypt-3-0-1-with-ruby2-0-on-windows
 gem 'faker', '1.1.2'
@@ -23,6 +24,7 @@ group :development, :test do
   gem 'spork-rails', '4.0.0'#github: 'sporkrb/spork-rails'
   gem 'guard-spork', '1.5.0'
   gem 'childprocess', '0.3.6'
+  gem 'launchy'
 end
 
 group :test do
