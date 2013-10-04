@@ -29,7 +29,7 @@ describe "User pages" do
     before { visit signup_path }
     let(:submit) { "Create my account" }
     describe "with valid information" do
-      let!(:user) {User.find_by(email: "user@example.com")}
+      let(:user) {User.find_by(email: "user@example.com")}
       before do
         fill_in "Name",         with: "Example User"
         fill_in "Email",        with: "user@example.com"
@@ -39,7 +39,7 @@ describe "User pages" do
       it "should redirect to show user page" do
         #before {click_button submit}
         click_button submit
-        expect(page).to have_title(user.name)
+        expect(page).to have_title("Example User")
         expect(page).to have_selector('div.alert.alert-success', text: 'Welcome')
       end
       it "should create a user" do
