@@ -65,7 +65,7 @@ describe "AuthenticationPages" do
         describe "visitiing the user index" do
           before do
             visit users_path
-            page.save_page
+            #page.save_page
           end
           it {should have_title('Sign in')}
         end
@@ -112,6 +112,41 @@ describe "AuthenticationPages" do
       describe "submitting a DELETE request to the Users#destroy action" do
         before { delete user_path(user) }
         specify { expect(response).to redirect_to(root_url) }
+      end
+    end
+
+    describe "when attempting to visit a protected page" do
+      #Friendly redirect governs wher ethe user lands after signing in
+      #based on what they visted prior to signing in
+      #first test validates redirected back to edit user after signing in
+      #second test validates no prior path, so go to profile page (the default)
+      let(:user) { FactoryGirl.create(:user) }
+      before do
+        visit edit_user_path(user)
+        fill_in "Email",    with: user.email
+        fill_in "Password", with: user.password
+        click_button "Sign in"
+      end
+      describe "after signing in" do
+        it "should render the desired protected page" do
+          #page.save_page
+          expect(page).to have_title('Edit user')
+        end
+        describe "when signing in again" do
+          before do
+            visit user_path(user)
+            page.save_page
+            click_link "Sign out"
+            visit signin_path
+            fill_in "Email",    with: user.email
+            fill_in "Password", with: user.password
+            click_button "Sign in"
+          end
+          it "should render the default (profile) page" do
+            page.save_page
+            expect(page).to have_title(user.name)
+          end
+        end
       end
     end
   end

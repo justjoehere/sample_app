@@ -20,6 +20,7 @@ module SessionsHelper
   end
   def sign_out
     cookies.delete(:remember_token)
+    session.delete(:return_to)
     self.current_user = nil
   end
   def current_user?(user)
@@ -33,5 +34,6 @@ module SessionsHelper
   def store_location
     #Store requesting page into session variable
     session[:return_to]=request.url if request.get?
+    #puts request.url if request.get?
   end
 end
