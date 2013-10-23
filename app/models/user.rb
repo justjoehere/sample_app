@@ -6,6 +6,20 @@ class User < ActiveRecord::Base
 
   before_save { self.email = email.downcase }#ensures uniquness via same case inserts
   has_many :microposts, dependent: :destroy
+  has_many :relationships, foreign_key: "follower_id", dependent: :destroy
+  has_many :followed_users, through: :relationships, source: :followed
+  has_many :reverse_relationships, foreign_key: "followed_id",
+           class_name:  "Relationship",
+           dependent:   :destroy
+  has_many :followers, through: :reverse_relationships, source: :follower
+  #Rails infers the association automatically: by default, Rails expects a
+  # foreign key of the form <class>_id, where <class> is the lower-case version
+  # of the class name.5 In the present case, although we are still dealing with users,
+  # they are now identified with the foreign key follower_id, so we have to tell that to Rails
+
+
+
+
   #attr_accessor :name, :email
   #for some reason the preceeding line causes an inability to save.  Not sure if this is ruby magic
   #where I've declared the name, email fields in the db creates issues when
@@ -28,6 +42,17 @@ class User < ActiveRecord::Base
     # This is preliminary. See "Following users" for the full implementation.
     Micropost.where("user_id = ?", id)
   end
+  def following?(other_user)
+    self.relationships.find_by(followed_id: other_user.id)
+  end
+
+  def follow!(other_user)
+    self.relationships.create!(followed_id: other_user.id)
+  end
+  def unfollow!(other_user)
+    self.relationships.find_by(followed_id: other_user.id).destroy!
+  end
+
 private
   def create_remember_token
     self.remember_token = User.encrypt(User.new_remember_token)

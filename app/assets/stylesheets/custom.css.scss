@@ -5,6 +5,7 @@ $grayLighter: #999;
 $grayMediumLight: #eaeaea;
 $gray: #c0c0c0;
 $grayDarker: #202020;
+$blue: #00ccff;
 /*LESS uses an “at” sign @, Sass uses a dollar sign $*/
 
 /* lack of . or # means it applies to a html tag.  . means a css class, # means an ID*/
@@ -123,7 +124,34 @@ aside {
     }
   }
 }
+.stats {
+  overflow: auto;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $grayLighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: $blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
 
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+}
 .gravatar {
   float: left;
   margin-right: 10px;

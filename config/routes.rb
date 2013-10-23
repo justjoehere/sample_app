@@ -1,8 +1,13 @@
 SampleApp::Application.routes.draw do
   #get "users/new"
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   match '/signup',  to: 'users#new', via: 'get'
 
+  #resources :users
   #resources replaces the user/new line.
   #See http://ruby.railstutorial.org/chapters/sign-up#table-RESTful_users
   #The routes below are included via the resources line
@@ -17,8 +22,11 @@ SampleApp::Application.routes.draw do
   #PATCH		/users/1	update		user_path(user)		update user
   #DELETE		/users/1	destroy		user_path(user)		delete user
   #Controller action for routes!
+
   resources :microposts, only: [:create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
+  resources :relationships, only: [:create, :destroy]
+
   match '/signin',  to: 'sessions#new', as: 'signin', via: 'get'
   match '/signout', to: 'sessions#destroy', as: 'signout', via: 'delete'
 
