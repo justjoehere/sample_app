@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'factory_girl_rails'
 
 describe "Static pages" do
   #let(:base_title) {"Ruby on Rails Tutorial Sample App"}
@@ -34,6 +35,12 @@ describe "Static pages" do
       it "should render the user's feed" do
         user.feed.each do |item|
           expect(page).to have_selector("li##{item.id}", text: item.content)
+        end
+       #page.should have_selector("section span", text: Micropost.pluralize(Micropost.count.to_s, "micropost"))
+      end
+      it "should display delete link for own posts" do
+        user.feed.each do |item|
+          expect(page).to have_link("delete")
         end
       end
     end
