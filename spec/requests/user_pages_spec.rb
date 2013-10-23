@@ -181,7 +181,10 @@ describe "User pages" do
       before(:all) { 30.times { FactoryGirl.create(:user) } }
       after(:all)  { User.delete_all }
 
-      it { should have_selector('div.pagination') }
+      it "should have pagination" do
+        #page.save_page
+        should have_selector('ul.pagination')  #changed from div.pagination due to bootstrap paginiation gem change
+      end
       it "should list each user" do
         User.paginate(page: 1).each do |user|
           expect(page).to have_selector('li', text: user.name)
@@ -208,6 +211,22 @@ describe "User pages" do
         end
         it { should_not have_link('delete', href: user_path(admin)) }
       end
+    end
+  end
+  describe "profile page" do
+    let(:user) { FactoryGirl.create(:user) }
+    let!(:m1) { FactoryGirl.create(:micropost, user: user, content: "Foo") }
+    let!(:m2) { FactoryGirl.create(:micropost, user: user, content: "Bar") }
+
+    before { visit user_path(user) }
+
+    it { should have_content(user.name) }
+    it { should have_title(user.name) }
+
+    describe "microposts" do
+      it { should have_content(m1.content) }
+      it { should have_content(m2.content) }
+      it { should have_content(user.microposts.count) }
     end
   end
 end

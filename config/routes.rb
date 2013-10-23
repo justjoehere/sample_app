@@ -17,7 +17,7 @@ SampleApp::Application.routes.draw do
   #PATCH		/users/1	update		user_path(user)		update user
   #DELETE		/users/1	destroy		user_path(user)		delete user
   #Controller action for routes!
-
+  resources :microposts, only: [:create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
   match '/signin',  to: 'sessions#new', as: 'signin', via: 'get'
   match '/signout', to: 'sessions#destroy', as: 'signout', via: 'delete'

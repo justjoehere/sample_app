@@ -11,7 +11,8 @@ gem 'bcrypt-ruby', '3.1.2', :require => "bcrypt"
 #Had to do this http://stackoverflow.com/questions/18541062/issues-using-bcrypt-3-0-1-with-ruby2-0-on-windows
 gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
-gem 'bootstrap-will_paginate', '0.0.9'
+#gem 'bootstrap-will_paginate', '0.0.9'
+gem 'will_paginate-bootstrap'
 gem 'newrelic_rpm'
 gem 'annotate', '2.5.0', group: :development
 

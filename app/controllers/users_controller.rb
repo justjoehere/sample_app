@@ -40,6 +40,7 @@ class UsersController < ApplicationController
     #going to /users/1 on a get request routes to show action in the controller
     #the params[:id] receives the /1
     @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
   def edit
     #@user=User.find(params[:id])
@@ -69,10 +70,10 @@ class UsersController < ApplicationController
     end
 
     #Before filters
-    def signed_in_user
-      store_location
-      redirect_to signin_url, notice: "Please sign in" unless signed_in?
-    end
+    #def signed_in_user  ##moved to sessions_helper
+    #  store_location
+    #  redirect_to signin_url, notice: "Please sign in" unless signed_in?
+    #end
     def correct_user
       @user=User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)

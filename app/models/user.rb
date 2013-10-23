@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   #same as validates(:email,:presence=>"true", :format=>{:with=>VALID_EMAIL_REGEX},:uniqueness=>{:case_sensitive=>"false"})
 
   before_save { self.email = email.downcase }#ensures uniquness via same case inserts
-
+  has_many :microposts, dependent: :destroy
   #attr_accessor :name, :email
   #for some reason the preceeding line causes an inability to save.  Not sure if this is ruby magic
   #where I've declared the name, email fields in the db creates issues when
@@ -24,7 +24,10 @@ class User < ActiveRecord::Base
   def User.encrypt(token)
     Digest::SHA1.hexdigest(token.to_s)
   end
-
+  def feed
+    # This is preliminary. See "Following users" for the full implementation.
+    Micropost.where("user_id = ?", id)
+  end
 private
   def create_remember_token
     self.remember_token = User.encrypt(User.new_remember_token)
