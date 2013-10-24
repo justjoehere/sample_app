@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
            class_name:  "Relationship",
            dependent:   :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
-  #Rails infers the association automatically: by default, Rails expects a
+    #Rails infers the association automatically: by default, Rails expects a
   # foreign key of the form <class>_id, where <class> is the lower-case version
   # of the class name.5 In the present case, although we are still dealing with users,
   # they are now identified with the foreign key follower_id, so we have to tell that to Rails
@@ -38,10 +38,6 @@ class User < ActiveRecord::Base
   def User.encrypt(token)
     Digest::SHA1.hexdigest(token.to_s)
   end
-  def feed
-    # This is preliminary. See "Following users" for the full implementation.
-    Micropost.where("user_id = ?", id)
-  end
   def following?(other_user)
     self.relationships.find_by(followed_id: other_user.id)
   end
@@ -52,7 +48,9 @@ class User < ActiveRecord::Base
   def unfollow!(other_user)
     self.relationships.find_by(followed_id: other_user.id).destroy!
   end
-
+  def feed
+    Micropost.from_users_followed_by(self)
+  end
 private
   def create_remember_token
     self.remember_token = User.encrypt(User.new_remember_token)
